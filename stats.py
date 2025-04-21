@@ -16,14 +16,13 @@ def char_count_dict(book_s):
     return char_dict
 
 def sorted_char_dict(char_dict):
+    sorted_dicts = []
     for key in char_dict:
-        print(char_dict[key])
-        print(key)
-    return None
+        if key.isalpha():
+            temp_dict = {"character": key, "count": char_dict[key]}
+            sorted_dicts.append(temp_dict)
+    sorted_dicts.sort(reverse=True, key=lambda x: x["count"])
+    return sorted_dicts
 
 
 
-
-
-
-print(sorted_char_dict({"a":3, "b":2, "c":1}))
